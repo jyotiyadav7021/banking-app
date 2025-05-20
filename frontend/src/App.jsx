@@ -1,12 +1,19 @@
 import React from 'react'
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import Homepage from '../components/Home'
 
 const App = () => {
   return (
-    <>
-    <h1 className='bg-blue-500 text-emerald-400'>
-      My Banking App
-    </h1>
-    </>
+    
+  <BrowserRouter>
+  <Routes>
+    <Route path='/' element={<Homepage/>}>
+
+    </Route>
+  </Routes>
+
+  </BrowserRouter>
+    
   )
 }
 
