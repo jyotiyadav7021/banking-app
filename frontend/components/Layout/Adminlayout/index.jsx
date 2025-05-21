@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import {
+    DashboardOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UploadOutlined,
@@ -7,25 +9,22 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
+import { Link } from 'react-router-dom';
 const { Header, Sider, Content } = Layout;
 const Adminlayout = ({children}) => {
 
     const items = [
             {
-              key: '1',
+              key: '/admin',
+              icon: <DashboardOutlined />,
+              label: <Link>Dashboard</Link>,
+            },
+            {
+              key: '/admin',
               icon: <UserOutlined />,
-              label: 'nav 1',
+              label: <Link>New Employee</Link>,
             },
-            {
-              key: '2',
-              icon: <VideoCameraOutlined />,
-              label: 'nav 2',
-            },
-            {
-              key: '3',
-              icon: <UploadOutlined />,
-              label: 'nav 3',
-            },
+            
           ]
 
 
