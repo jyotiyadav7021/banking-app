@@ -9,7 +9,7 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, theme } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 const { Header, Sider, Content } = Layout;
 const Adminlayout = ({children}) => {
 
@@ -20,7 +20,7 @@ const Adminlayout = ({children}) => {
               label: <Link>Dashboard</Link>,
             },
             {
-              key: '/admin',
+              key: '/admin/new-employee',
               icon: <UserOutlined />,
               label: <Link>New Employee</Link>,
             },
@@ -33,7 +33,7 @@ const Adminlayout = ({children}) => {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
   return (
-    <Layout>
+    <Layout className='!min-h-screen'>
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical" />
         <Menu
