@@ -1,14 +1,14 @@
 import React from 'react'
 import Adminlayout from '../Layout/Adminlayout'
 
-const Dashboard = () => {
+const NewEmployee = () => {
   return (
     <Adminlayout className="text-5xl font-bold text-red-500">
         <h1>
-            Admin Panel
+            welcome to Dashboard
         </h1>
     </Adminlayout>
   )
 }
 
-export default Dashboard
+export default NewEmployee

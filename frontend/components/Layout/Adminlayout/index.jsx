@@ -13,16 +13,19 @@ import { Link, useLocation } from 'react-router-dom';
 const { Header, Sider, Content } = Layout;
 const Adminlayout = ({children}) => {
 
+  const {pathname} = useLocation();
+  
+
     const items = [
             {
               key: '/admin',
               icon: <DashboardOutlined />,
-              label: <Link>Dashboard</Link>,
+              label: <Link to="/admin">Dashboard</Link>,
             },
             {
               key: '/admin/new-employee',
               icon: <UserOutlined />,
-              label: <Link>New Employee</Link>,
+              label: <Link to="/admin/new-employee">New Employee</Link>,
             },
             
           ]
@@ -39,7 +42,7 @@ const Adminlayout = ({children}) => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['1']}
+          defaultSelectedKeys={['pathname']}
           items={items}
         />
       </Sider>
