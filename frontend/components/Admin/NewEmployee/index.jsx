@@ -2,11 +2,27 @@ import React from 'react'
 import Adminlayout from '../../Layout/Adminlayout'
 import { Button, Card, Form, Input, Table } from 'antd'
 import { DeleteOutlined, EditOutlined, EyeInvisibleOutlined } from '@ant-design/icons';
+import { trimData } from '../../../modules.js/modules';
+import axios from "axios"
 
 const {Item}= Form;
 
 const NewEmployee = () => {
 
+    //states collection
+    const [empForm] = Form.useForm();
+
+    //create new employee
+    const onFinish = async(values) =>{
+        let finalObj = trimData(values);
+        const {data} = await axios.post("http://localhost:8080/api/users",finalObj);
+        console.log(data);
+        console.log(finalObj);
+    }
+
+
+
+    //columns for table
     const columns =[
         {
             title : "Profile",
@@ -57,7 +73,10 @@ const NewEmployee = () => {
         <div>
             <Card
             title="Add New Employee">
-                <Form>
+                <Form
+                form = {empForm}
+                onFinish={onFinish}>
+                    
                     <Item
                     label="Profile"
                     name="xyz">
